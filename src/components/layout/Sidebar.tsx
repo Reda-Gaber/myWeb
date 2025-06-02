@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const profile = {
     name: 'Reda Gaber',
     title: 'Backend Developer',
-    image: '../../../img/me.jpg',
+    image: '/img/me.jpg',
     tagline: 'Junior backend developer passionate about building APIs, working with databases, and learning modern backend tools.'
   };
 

@@ -61,7 +61,7 @@ const AboutPage = () => {
           <div className="md:flex gap-8">
             <div className="md:w-1/3 mb-6 md:mb-0">
               <img 
-                src="../../img/me.jpg" 
+                src="/img/me.jpg" 
                 alt="Reda Gaber" 
                 className="w-full h-auto rounded-lg"
               />
