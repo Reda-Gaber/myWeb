@@ -9,6 +9,7 @@ const AboutPage = () => {
   const skills = [
     { name: 'JavaScript', percentage: 75 },
     { name: 'Node.js', percentage: 70 },
+    { name: 'TypeScript', percentage: 70 },
     { name: 'MongoDB', percentage: 65 },
     { name: 'Express.js', percentage: 60 },
     { name: 'REST APIs', percentage: 70 },
