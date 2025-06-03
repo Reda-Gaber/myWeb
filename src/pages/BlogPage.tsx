@@ -129,7 +129,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
         />
       </div>
       
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-6 flex-1 flex justify-center flex-col">
         <div className="mb-3">
           <p className="text-sm text-gray-500 dark:text-gray-400">{post.date}</p>
         </div>
@@ -141,7 +141,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
         </p>
         
         <div className="mt-auto">
-          <div className="flex flex-wrap gap-2 mb-3">
+          <div className="flex items-center flex-wrap gap-2 mb-3">
             {post.tags.map((tag, index) => (
               <span 
                 key={index} 
@@ -158,7 +158,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
             </p>
             <Link
               to={post.link}
-              className="px-4 py-2 text-sm font-medium text-white bg-primary-500 rounded-md hover:bg-primary-600 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-primary-500 hover:text-primary-600 transition-colors rounded-md transition-colors"
             >
               اقرأ المزيد
             </Link>

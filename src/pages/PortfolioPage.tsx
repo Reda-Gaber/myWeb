@@ -81,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
       </div>
       
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-6 flex-1 justify-center flex flex-col">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
         
         <div className="mb-3 flex flex-wrap gap-2">
