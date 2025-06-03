@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
-  Home, User, Briefcase, BookOpen, Mail, Settings, X, 
-  Languages
+  Home, User, Briefcase, BookOpen, Mail, Settings, X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -13,14 +12,14 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
-  const { direction, toggleDirection } = useTheme();
+  const { direction } = useTheme();
   
   // Mock profile data - in a real app, this would come from a data file or API
   const profile = {
     name: 'Reda Gaber',
     title: 'Backend Developer',
     image: '/img/me.jpg',
-    tagline: 'Junior backend developer passionate about building APIs, working with databases, and learning modern backend tools.'
+    tagline: 'Junior backend developer passionate about APIs, databases, and modern backend tools'
   };
 
   const navItems = [
@@ -66,7 +65,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         initial={window.innerWidth < 768 ? 'closed' : 'open'}
         animate={isOpen ? 'open' : 'closed'}
       >
-        <div className="flex items-center justify-between p-4 border-b dark:border-gray-700">
+        <div className="flex items-center justify-between p-0 border-b dark:border-gray-700">
           <div className="flex items-center space-x-3">
           </div>
           <button 
@@ -78,8 +77,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           </button>
         </div>
         
-        <div className="p-6 text-center border-b dark:border-gray-700">
-          <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+        <div className="p-3 text-center border-b dark:border-gray-700">
+          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
             <img 
               src={profile.image} 
               alt={profile.name} 
@@ -88,17 +87,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           </div>
           <h2 className="text-xl font-bold">{profile.name}</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400">{profile.title}</p>
-          <p className="mt-2 text-sm">{profile.tagline}</p>
+          <p className="mt-2 text-xs">{profile.tagline}</p>
         </div>
         
-        <nav className="flex-1 px-3 py-4 overflow-y-auto">
+        <nav className="flex-1 px-3 py-1 overflow-y-auto">
           <ul className="space-y-1">
             {navItems.map((item) => (
               <li key={item.to}>
                 <NavLink 
                   to={item.to}
                   className={({ isActive }) => 
-                    `sidebar-link ${isActive ? 'active' : ''}`
+                    `sidebar-link text-xs ${isActive ? 'active' : ''}`
                   }
                 >
                   {item.icon}

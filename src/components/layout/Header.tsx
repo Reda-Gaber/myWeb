@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between px-4 py-1">
         <div className="flex items-center">
           <button
             onClick={toggleSidebar}
@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) => {
           </button>
           
           <div className="ml-4">
-            <h1 className="text-lg font-semibold">Personal Dashboard</h1>
+            <h1 className="text-lg font-semibold"></h1>
           </div>
         </div>
         

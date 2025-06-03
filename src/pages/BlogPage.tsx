@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import blogData, { BlogPost } from '../data/blogData';
 
 const BlogPage = () => {
-  const [activeTag, setActiveTag] = useState<string>('All');
+  const [activeTag, setActiveTag] = useState<string>('الكل');
   const [searchQuery, setSearchQuery] = useState<string>('');
   
   // Extract all unique tags
-  const allTags = ['All', 'Node.js', 'MongoDB', 'Express.js', 'REST APIs', 'Databases', 'Backend', 'JavaScript'];
+  const allTags = [
+    'الكل',
+    'البرمجة',
+    'المبتدئين',
+    'الأساسيات',
+    'الواجهات الأمامية',
+    'رياكت',
+    'HTML',
+    'CSS',
+    'الخلفيات',
+    'Node.js',
+    'واجهات البرمجة',
+    'قواعد البيانات',
+    'جيت هاب',
+    'التحكم بالإصدارات',
+    'التعاون',
+    'المشاريع',
+    'التطوير الكامل',
+    'النشر'
+  ];
   
   // Filter posts based on active tag and search query
   const filteredPosts = blogData.filter(post => {
-    const matchesTag = activeTag === 'All' || post.tags.includes(activeTag);
+    const matchesTag = activeTag === 'الكل' || post.tags.includes(activeTag);
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesTag && matchesSearch;
@@ -26,9 +46,9 @@ const BlogPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold mb-2">Blog</h1>
+        <h1 className="text-3xl font-bold mb-2">المدونة</h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Insights and tutorials on backend development, APIs, and database management.
+          مقالات ودروس حول تطوير البرمجيات، الواجهات الأمامية والخلفية، وإدارة المشاريع.
         </p>
       </motion.div>
 
@@ -42,7 +62,7 @@ const BlogPage = () => {
         <div className="w-full md:w-72">
           <input
             type="text"
-            placeholder="Search backend articles..."
+            placeholder="ابحث في المقالات..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -82,9 +102,9 @@ const BlogPage = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <h3 className="text-xl font-medium mb-2">No posts found</h3>
+              <h3 className="text-xl font-medium mb-2">لم يتم العثور على مقالات</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Try adjusting your search or filter to find what you're looking for.
+                حاول تعديل البحث أو الفلتر للعثور على ما تبحث عنه.
               </p>
             </div>
           )}
@@ -132,10 +152,16 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
             ))}
           </div>
           
-          <div className="flex items-center">
+          <div className="flex items-center justify-between">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              By <span className="font-medium text-gray-700 dark:text-gray-300">Reda Gaber</span>
+              بقلم <span className="font-medium text-gray-700 dark:text-gray-300">{post.author}</span>
             </p>
+            <Link
+              to={post.link}
+              className="px-4 py-2 text-sm font-medium text-white bg-primary-500 rounded-md hover:bg-primary-600 transition-colors"
+            >
+              اقرأ المزيد
+            </Link>
           </div>
         </div>
       </div>

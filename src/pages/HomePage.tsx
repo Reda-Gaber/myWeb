@@ -34,7 +34,7 @@ const HomePage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
           Hello, I'm <span className="text-primary-500">Reda Gaber</span>
         </h1>
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-300">
